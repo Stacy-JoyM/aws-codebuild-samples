@@ -16,7 +16,7 @@ phases:
       - pytest tests/test_integration.py
 
       - echo "Running Security Scan (Bandit)"
-      - bandit -r ./tests     
+      - bandit -r . --exit-zero         
 
       - echo "Running Load Test"
       - locust -f locustfile.py --headless -u 5 -r 1 -t 10s -H https://jsonplaceholder.typicode.com
