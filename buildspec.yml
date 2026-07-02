@@ -18,5 +18,5 @@ phases:
       - echo "Running Security Scan (Bandit)"
       - bandit -r . --exit-zero         
 
-      - echo "Running Load Test"
-      - locust -f locustfile.py --headless -u 5 -r 1 -t 10s -H https://jsonplaceholder.typicode.com
+      - echo "Running Load Test (simplified)"
+      - locust -f locustfile.py --headless --users 5 --spawn-rate 1 --run-time 10s --host https://jsonplaceholder.typicode.com
